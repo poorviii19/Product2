@@ -1,6 +1,7 @@
 import Menu from "./components/Menu.jsx"
 import Additems from "./admin/Additems.jsx";
 import Updateitems from "./admin/Updateitems.jsx";
+import Deleteitems from "./admin/Deleteitems.jsx";
 
 function App (){
   return (
@@ -9,6 +10,7 @@ function App (){
     <Menu/>
     <Additems/>
     <Updateitems/>
+    <Deleteitems/>
 
     </>
   )

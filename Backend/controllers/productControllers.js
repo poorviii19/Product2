@@ -32,6 +32,24 @@ const updateProd = async(req,res)=>{
         res.status(500).json({'message':'Not updated, server error'})
     }
 
+    
 }
 
-export {showProd, addProd, updateProd};
+const deleteProd = async(req,res)=>{
+    try{
+        const {id} = req.params;
+        const del = await productModel.findByIdAndDelete(id);
+        if(!del){
+            res.status(404).json({"message":"not deleted"})
+        }
+        res.status(200).json({"message":"Deleetd Succesfully", product: del})
+
+
+    }
+    catch(err){
+        console.log("server error",err)
+    }
+
+}
+
+export {showProd, addProd, updateProd, deleteProd};
